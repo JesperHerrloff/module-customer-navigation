@@ -27,7 +27,7 @@ class AccountNavigation
      */
     public function afterGetLinks(Navigation $subject, $result):array
     {
-        if (!$this->scopeConfig->isSetFlag('jesperherrloff_customer_navigation/settings/customer_navigation')) {
+        if (!$this->scopeConfig->isSetFlag('jesperherrloff_customer_navigation/settings/account_navigation')) {
             return $result;
         }
         /**
@@ -37,7 +37,7 @@ class AccountNavigation
         foreach ($result as $key => $link) {
             $link->setTemplate('JesperHerrloff_CustomerNavigation::account/link.phtml');
             if ($this->scopeConfig->isSetFlag('jesperherrloff_customer_navigation/settings/name_as_class')) {
-                $link->setAttributes(['class' => $key]);
+                $link->setAttributes(['class' => $link->getNameInLayout()]);
             }
             $result[$key] = $link;
         }

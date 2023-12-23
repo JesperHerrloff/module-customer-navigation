@@ -7,6 +7,13 @@ This module adds template to customer Navigation links in the header. And in Cus
 Before installing this module, note that the Magento_Customer module depends on the Magento_Theme module, 
 which means that the Magento_Theme module must be installed before the Magento_Customer module is installed.
 
+### Install via composer (recommend)
+Run the following command in Magento 2 root folder:
+`````
+composer require jesper-herrloff/module-customer-navigation 
+php bin/magento setup:upgrade
+`````
+
 ## Configuration
 There is a setting in the admin panel under 
 Stores -> Configuration -> Customer -> Customer Navigation -> Navigation Settings -> Customer Account Navigation. 

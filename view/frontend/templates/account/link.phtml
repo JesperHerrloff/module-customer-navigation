@@ -1,23 +1,32 @@
 <?php
-/** @var $block Current */
+/** @var $block Current
+ *  @var $escaper Escaper
+ * */
 
+use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Html\Link\Current;
-
+$attributesHtml = '';
+$attributes = $block->getAttributes();
+if ($attributes) {
+    foreach ($attributes as $attribute => $value) {
+        $attributesHtml .= ' ' . $attribute . '="' . $block->escapeHtml($value) . '"';
+    }
+}
 ?>
-<li class="nav item <?= $block->isCurrent() ? 'current' : '' ?>">
-    <a href="<?= $this->escapeHtml($this->getHref()) ?>"
-    <?= $this->getTitle()
-    ? ' title="' . $this->escapeHtml(__($this->getTitle())) . '"'
+<li class="nav item <?= $block instanceof Current && $block->isCurrent() ? 'current' : '' ?>">
+    <a href="<?= $escaper->escapeHtml($block->getHref()) ?>"
+    <?= $block->getTitle()
+    ? ' title="' . $escaper->escapeHtml(__($block->getTitle())) . '"'
     : '' ?>
-    <?= $this->getAttributesHtml() ?>>
+    <?= $attributesHtml ?>>
 
-        <?php if ($this->getIsHighlighted()): ?>
+        <?php if ($block->getIsHighlighted()): ?>
             <strong>
         <?php endif; ?>
 
-        <?= $this->escapeHtml(__($this->getLabel())) ?>
+        <?= $escaper->escapeHtml(__($block->getLabel())) ?>
 
-        <?php if ($this->getIsHighlighted()): ?>
+        <?php if ($block->getIsHighlighted()): ?>
             </strong>
         <?php endif; ?>
     </a>
