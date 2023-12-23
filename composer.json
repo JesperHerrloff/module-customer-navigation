@@ -1,16 +1,15 @@
 {
-  "name": "jesper-herrloff/customer-navigation",
-  "version": "1.0.0",
+  "name": "jesper-herrloff/module-customer-navigation",
   "description": "Extends Customer Navigation with settings for how to display the navigation",
   "type": "magento2-module",
   "require": {
     "php": ">=8.1",
-    "magento/framework": "*",
-    "magento/module-customer": "*",
-    "magento/module-config": "*"
+    "magento/framework": "103.*",
+    "magento/module-customer": "103.*",
+    "magento/module-config": "101.*"
   },
   "license": [
-    "Proprietary"
+    "MIT"
   ],
   "autoload": {
     "files": [
