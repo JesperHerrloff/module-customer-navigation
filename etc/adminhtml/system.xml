@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="jesperherrloff_customer_navigation" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>customer</tab>
+            <class>separator-top</class>
+            <label>Customer Navigation</label>
+            <resource>JesperHerrloff_CustomerNavigation::config_customer_navigation</resource>
+            <group id="settings" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Navigation settings</label>
+                <comment>Set navigation settings</comment>
+                <field id="account_navigation" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" type="select">
+                    <label>Customer Account Navigation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or disable customer account navigation template</comment>
+                </field>
+                <field id="name_as_class" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" type="select">
+                    <label>Add name in layout as link class</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or disable adding name in layout as class to the link</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

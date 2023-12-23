@@ -1,0 +1,24 @@
+<?php
+/** @var $block Current */
+
+use Magento\Framework\View\Element\Html\Link\Current;
+
+?>
+<li class="nav item <?= $block->isCurrent() ? 'current' : '' ?>">
+    <a href="<?= $this->escapeHtml($this->getHref()) ?>"
+    <?= $this->getTitle()
+    ? ' title="' . $this->escapeHtml(__($this->getTitle())) . '"'
+    : '' ?>
+    <?= $this->getAttributesHtml() ?>>
+
+        <?php if ($this->getIsHighlighted()): ?>
+            <strong>
+        <?php endif; ?>
+
+        <?= $this->escapeHtml(__($this->getLabel())) ?>
+
+        <?php if ($this->getIsHighlighted()): ?>
+            </strong>
+        <?php endif; ?>
+    </a>
+</li>
