@@ -1,4 +1,4 @@
-# Nordicmotorcenter_CustomerNavigation module
+# JesperHerrloff_CustomerNavigation module
 
 # Overview
 This module adds template to customer Navigation links in the header. And in Customer Account Navigation links in the sidebar.
@@ -10,7 +10,7 @@ which means that the Magento_Theme module must be installed before the Magento_C
 ## Configuration
 There is a setting in the admin panel under 
 Stores -> Configuration -> Customer -> Customer Navigation -> Navigation Settings -> Customer Account Navigation. 
-This setting is used to enable or disable Nordicmotorcenter_CustomerNavigation/Plugin/AccountNavigation.
+This setting is used to enable or disable JesperHerrloff_CustomerNavigation/Plugin/AccountNavigation.
 If the setting is enabled, the customer account navigation links in the sidebar will be displayed as links even if it is current link.
 Stores -> Configuration -> Customer -> Customer Navigation -> Navigation Settings -> Add name in layout As link class. 
 This setting is used to add the name of the link in the layout as a class to the link. This is to make it possible to add icons for example in the links.
@@ -21,7 +21,7 @@ After installing the module, the customer navigation links in the header and in 
 sidebar will be displayed as links even if it is current link. This is to make it possible to add icons for example in the links.
 
 ## Theme Extensibility
-Extends Nordicmotorcenter_CustomerNavigation/templates/account/link.phtml template.
+Extend JesperHerrloff_CustomerNavigation/templates/account/link.phtml template.
 This makes it possible to make a customisation of the template in your own theme.
 
 ## Additional information
